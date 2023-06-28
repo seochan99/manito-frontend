@@ -44,19 +44,20 @@ export default function AuthLogin() {
           value={email}
           onChange={handleEmailChange}
           type="email"
+          required
         />
         <AuthLoginInputHeader>Password</AuthLoginInputHeader>
         <AuthLoginInputBody
           value={password}
           onChange={handlePasswordChange}
           type="password"
+          required
         />
-
-      <AuthLoginBtn>
+      <AuthLoginBtn >
           로그인
-
       {/* 로그인 버튼 */}
       </AuthLoginBtn>
+
       </AuthLoginInputWrapper>
       <AuthLoginTextWrapper>
         <AuthLoginText>

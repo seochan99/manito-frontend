@@ -6,7 +6,7 @@ export const AuthLoginWrapper = styled.div`
     
 
 `
-export const AuthLoginInputWrapper = styled.div`
+export const AuthLoginInputWrapper = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,9 +109,9 @@ export const SignupWrapper = styled.div`
 
     `
 
-    export const AuthLoginBtn = styled.div`
+    export const AuthLoginBtn = styled.button`
     display: flex;
-    width: 300px;
+    width: 334px;
     padding: 12px;
     justify-content: center;
     align-items: center;
