@@ -30,7 +30,6 @@ export const AuthLoginInputHeader = styled.h1`
 
 
 export const AuthLoginInputBody = styled.input`
-    
     width: 324px;
     height: 48px;
     flex-shrink: 0;
@@ -38,7 +37,57 @@ export const AuthLoginInputBody = styled.input`
     border: 1px solid #39768D;
     background: #1E4154;
     color : white;
-    
+`
 
+export const AuthLoginText = styled.p`
+color:#AEAFB9;
+margin-bottom: 8px;
+`
+
+export const AuthLoginTextLink = styled.p`
+color : #FFFFFF;
+// 밑줄
+text-decoration: underline;
+cursor: pointer;
+margin-bottom: 13px;
+`
+export const AuthLoginTextWrapper = styled.div`
+margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
 
 `
+export const TotalManitoWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+
+`
+export const TotalManitoLogo = styled.img`
+
+    width: 60%;
+    
+    object-fit: contain;
+    margin-top: 24px;
+    
+    `    
+
+    export const TotalManitoContainer = styled.div`
+    
+    
+    margin : 30px 0px;
+    width: 342px;
+    padding: 12px;
+    border-radius: 6px;
+    background: #1E4154;
+    color: var(--white, #FFF);
+    text-align: right;
+    font-size: 24px;
+    /* font-family: Leferi Point Type; */
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    `
