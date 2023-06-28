@@ -34,9 +34,7 @@ const LayoutWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   background-color: #F5F5F5;
-  
-  
-  /* text-align: center; */
+
   
 `;
 
@@ -57,6 +55,7 @@ const MainHeaderWrapper = styled.div`
 `
 
 
+// 메인 레이아웃
 const Layout = () => {
 return (
     <>
@@ -66,13 +65,14 @@ return (
                 <BodyWrapper>
                   <Outlet />
                 </BodyWrapper>
-                <Footer />
         </ContentWrapper>
       </LayoutWrapper>
     </>
 );
 };
 
+
+// 로그인 및 회원가입 레이아웃
 const AuthLayout = () => {
   return (
     <>
@@ -81,7 +81,6 @@ const AuthLayout = () => {
         <MainHeaderWrapper>
 
           <MainHeaderIcon src={MainHeaderImg} alt="MainHeaderImg"/>
-          
         </MainHeaderWrapper>
               
               
@@ -106,6 +105,7 @@ function App() {
                 <Route element={<AuthLayout />}>
                   <Route path="/login" element={<AuthLogin/>}/>
                   <Route path="/signup" element={<AuthSingUp/>}/>
+                  <Route path="/reset" element={<AuthSingUp/>}/>
                 </Route>
           
                 {/* 로그인 후 메인 */}

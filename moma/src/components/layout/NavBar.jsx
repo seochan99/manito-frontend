@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { styled } from "styled-components"
+import LogoImg from "../../assets/images/Logo.png"
 
 
 
@@ -11,21 +12,18 @@ const Container = styled.nav`
     position: relative;
     justify-content: space-between;
     padding: 16px;
-    border-bottom: 1px solid #E5E5E5;
+    /* border-bottom: 1px solid #E5E5E5; */
 
 `
-
-const Title = styled.div`
-    font-size: 24px;
+const Logo = styled.img`
+    width: 65%;
 `
+
 
 export default function NavBar() {
   return (
     <Container>
-        <Title>
-          
-            모두의 마니또, 모마
-        </Title>
+        <Logo src={LogoImg} alt="Logo" />
     
     </Container>
     

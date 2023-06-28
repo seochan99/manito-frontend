@@ -9,7 +9,8 @@ import {
   AuthLoginTextWrapper,
   TotalManitoWrapper,
   TotalManitoLogo,
-  TotalManitoContainer
+  TotalManitoContainer,
+  AuthLoginBtn
 } from './style';
 import TotalManitoLogoImg from "../../assets/images/TotalManito.png"
 import { useNavigate } from 'react-router-dom';
@@ -51,6 +52,11 @@ export default function AuthLogin() {
           type="password"
         />
 
+      <AuthLoginBtn>
+          로그인
+
+      {/* 로그인 버튼 */}
+      </AuthLoginBtn>
       </AuthLoginInputWrapper>
       <AuthLoginTextWrapper>
         <AuthLoginText>

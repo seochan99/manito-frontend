@@ -30,7 +30,8 @@ export const AuthLoginInputHeader = styled.h1`
 
 
 export const AuthLoginInputBody = styled.input`
-    width: 324px;
+    padding-left: 10px;
+    width: 314px;
     height: 48px;
     flex-shrink: 0;
     border-radius: 6px;
@@ -75,7 +76,7 @@ export const TotalManitoLogo = styled.img`
     
     `    
 
-    export const TotalManitoContainer = styled.div`
+export const TotalManitoContainer = styled.div`
     
     
     margin : 30px 0px;
@@ -90,4 +91,37 @@ export const TotalManitoLogo = styled.img`
     display: flex;
     justify-content: end;
     align-items: center;
+    `
+
+export const SignUpHeaderImgBox = styled.img`
+    width: 60%;
+    
+    position: absolute;
+    top: 200px;
+    
+
+    `
+
+export const SignupWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    `
+
+    export const AuthLoginBtn = styled.div`
+    display: flex;
+    width: 300px;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+border-radius: 12px;
+border: 1px solid #C02E21;
+background: #C9462A;
+margin-top: 20px;
+
+color: #FFF;
+text-align: center;
+font-size: 18px;
+
     `
