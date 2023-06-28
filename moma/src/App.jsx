@@ -19,13 +19,9 @@ text-align: center;
 margin-top: 90px;
 margin-bottom: 150px;
 padding: 10px;
-// felx-grow: 1;
 `;
 
 const LayoutWrapper = styled.div`
-/* display: flex;
-flex-direction: column;
-min-height: 100vh; */
 
   width: 100vw;
   display: flex;
@@ -36,9 +32,12 @@ min-height: 100vh; */
 `;
 
 const ContentWrapper = styled.div`
-flex-grow: 1;
+    max-width: 425px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `
-
 
 
 const Layout = () => {
@@ -48,16 +47,10 @@ return (
   <>
     <LayoutWrapper>
       <ContentWrapper>
-      <NavBar />
-        <BodyWrapper>
-          {/* <TransitionGroup>
-            <CSSTransition key={location.key} classNames="fade" timeout={300}> */}
+              <NavBar />
               <Outlet />
-            {/* </CSSTransition>
-          </TransitionGroup> */}
-        </BodyWrapper>
+              <Footer />
       </ContentWrapper>
-      <Footer />
     </LayoutWrapper>
   </>
 );
