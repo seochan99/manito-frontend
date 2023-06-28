@@ -38,7 +38,7 @@ export default function AuthLogin() {
 
   return (
     <AuthLoginWrapper>
-      <AuthLoginInputWrapper>
+      <AuthLoginInputWrapper method="post" >
         <AuthLoginInputHeader>E-mail</AuthLoginInputHeader>
         <AuthLoginInputBody
           value={email}

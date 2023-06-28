@@ -8,7 +8,7 @@ export default function AuthSingUp() {
     
     <SignupWrapper>
     
-    <SignUpHeaderImgBox src={SignUpHeaderImg} alt="SignUpHeaderImg" />
+      <SignUpHeaderImgBox src={SignUpHeaderImg} alt="SignUpHeaderImg" />
 
 
     

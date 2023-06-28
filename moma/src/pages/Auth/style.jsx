@@ -115,13 +115,12 @@ export const SignupWrapper = styled.div`
     padding: 12px;
     justify-content: center;
     align-items: center;
-border-radius: 12px;
-border: 1px solid #C02E21;
-background: #C9462A;
-margin-top: 20px;
-
-color: #FFF;
-text-align: center;
-font-size: 18px;
+    border-radius: 12px;
+    border: 1px solid #C02E21;
+    background: #C9462A;
+    margin-top: 20px;
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
 
     `
