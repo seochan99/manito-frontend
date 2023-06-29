@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 import * as S from './style';
 
-export default function Step2({ setStep, type }) {
+export default function Step2({ setStep, type,setPeoples,setMails}) {
   const [groupName, setGroupName] = useState('');
   const [participantEmails, setParticipantEmails] = useState('');
   const [participantNames, setParticipantNames] = useState('');
@@ -32,6 +32,9 @@ export default function Step2({ setStep, type }) {
 
     const emails = participantEmails.split(',');
     const names = participantNames.split(',');
+
+    setPeoples(names);
+    setMails(emails);
     console.log(emails);
     console.log(names);
 
@@ -78,7 +81,7 @@ export default function Step2({ setStep, type }) {
             required
             placeholder="예시) aaa@aaa.com, bbb@bbb.com..."
             value={participantEmails}
-            onChange={(e) => setParticipantEmails(e.target.value)}
+            onChange={(e) => setParticipantEmails(e.target.value.trim())}
           />
 
           <S.InputTitle>참가자의 이름을 알려주세요.</S.InputTitle>
@@ -86,7 +89,7 @@ export default function Step2({ setStep, type }) {
             required
             placeholder="예시) 김땡땡, 이빵빵, ..."
             value={participantNames}
-            onChange={(e) => setParticipantNames(e.target.value)}
+            onChange={(e) => setParticipantNames(e.target.value.trim())}
           />
 
           <S.InputTitle>공개원하시는 날을 알려주세요.</S.InputTitle>
