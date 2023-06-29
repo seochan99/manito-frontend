@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
+import axios from "../../api/axios";
+import Lottie from "react-lottie";
+import animationData from "../../assets/lottie/giftbox.json";
 import {
+    Modal,
     MainBody,
     MainCreateManito,
     MainCreateManitoTitle,
@@ -21,27 +25,57 @@ import {
 export default function Main() {
     const [userData, setUserData] = useState("");
     const [manitoData, setManitoData] = useState([]);
+    const [visiModal, setVisiModal] = useState({ display: "none" });
+    const navigate = useNavigate();
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+        },
+    };
+
+    function createManito() {
+        setVisiModal({ display: "flex" });
+        navigate("/create");
+    }
+
+    async function getManitoData(id) {
+        try {
+            const response = await axios.get(`manito/${id}/partner/`);
+            const resData = response.data;
+            console.log(resData);
+        } catch (error) {
+            console.error("Error", error);
+        }
+    }
+    getManitoData(2);
 
     useEffect(() => {
         setUserData("서희찬");
-        setManitoData([
-            {
-                type: "함께 확인해요.",
-                title: "영업팀 마니또",
-                sdate: "2023.01.01",
-                edate: "2023.01.02",
-            },
-            {
-                type: "메일로 받아봐요.",
-                title: "영업팀 마니또",
-                sdate: "2023.01.01",
-                edate: "2023.01.02",
-            },
-        ]);
+        // setManitoData([
+        //     {
+        //         type: "함께 확인해요.",
+        //         title: "영업팀 마니또",
+        //         sdate: "2023.01.01",
+        //         edate: "2023.01.02",
+        //     },
+        //     {
+        //         type: "메일로 받아봐요.",
+        //         title: "영업팀 마니또",
+        //         sdate: "2023.01.01",
+        //         edate: "2023.01.02",
+        //     },
+        // ]);
     }, []);
 
     return (
         <MainWrapper>
+            <Modal style={visiModal}>
+                <Lottie options={defaultOptions} height={240} width={240} />
+            </Modal>
             <MainHeader>
                 <MainLogo>모마</MainLogo>
                 <MainHeaderText>
@@ -49,7 +83,7 @@ export default function Main() {
                 </MainHeaderText>
             </MainHeader>
             <MainBody>
-                <MainCreateManito>
+                <MainCreateManito onClick={createManito}>
                     <MainCreateManitoTitle>
                         마니또{" "}
                         <strong style={{ fontWeight: "bold" }}>매칭하기</strong>
