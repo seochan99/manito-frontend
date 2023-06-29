@@ -66,9 +66,19 @@ letter-spacing: -0.75px;
 margin-bottom:9px;
 `
 
+export const WarningContent2 = styled.p`
+color: #676060;
+font-size: 15px;
+font-family: Pretendard;
+letter-spacing: -0.75px;
+margin-bottom:9px;
+margin-top: 18px;
+`
+
+
 
 export const TypeBox  = styled.div`
-margin-top: 38px;
+margin: 38px 0px;
 width: 40%;
 
 display: flex;

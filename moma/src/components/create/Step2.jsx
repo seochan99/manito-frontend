@@ -7,6 +7,8 @@ export default function Step2({setStep,type}) {
   return (
     <>
     <S.ProgressingHeaderWrapper>
+
+      {/* type에 따라서 */}
       {
       type ==="A" ? 
         <S.TypeBox>
@@ -16,10 +18,17 @@ export default function Step2({setStep,type}) {
       <S.TypeBox>
         함께 알아가볼래요!
       </S.TypeBox>
-
-
       }
 
+          <S.ProgressingHeader>
+            마니또
+            <br/>
+            매칭결과를?
+          </S.ProgressingHeader>
+
+          <S.WarningContent2>
+          참가자의 메일과 이름 순서를 동일하게 입력해 주세요!
+          </S.WarningContent2>
         {/* 매칭  */}
       <S.WhatTypeOfManitoWrapper>
       <S.WhatTypeOfManito type={0} onClick={()=>{
