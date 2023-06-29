@@ -1,109 +1,195 @@
 import { styled } from "styled-components";
 
-export const AuthLoginWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
+export const LoginWrapper = styled.div`
+    width: 390px;
+    max-width: 390px;
+    background: #fbfbfb;
+    padding: 30px;
 `;
-export const AuthLoginInputWrapper = styled.form`
+
+export const LoginHeader = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
 `;
 
-export const AuthLoginInputHeader = styled.h1`
-    width: 324px;
-    display: flex;
-    justify-content: start;
+export const LoginHeaderMainWording = styled.div`
+    font-weight: bold;
+    font-size: 21px;
+`;
 
-    color: var(--white, #fff);
+export const LoginHeaderSubWording = styled.div`
+    font-weight: bold;
+    font-size: 15px;
+`;
+
+export const LoginBody = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+`;
+
+export const LoginImgBox = styled.img`
+    width: 270px;
+    height: 270px;
+    background: rgba(255, 0, 0, 0.1);
+    margin-bottom: 60px;
+`;
+
+export const LoginInputList = styled.div`
+    width: 100%;
+    margin-bottom: 30px;
+`;
+
+export const LoginInputWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 12px;
+`;
+
+export const LoginInputTitle = styled.div`
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0px 9px 3px 9px;
+`;
+
+export const LoginInputText = styled.input`
+    background: #f3eeef;
+    outline: none;
+    border: none;
+    border-radius: 100px;
+    padding: 15px 24px;
+`;
+
+export const LoginInputHint = styled.div`
     font-size: 12px;
-    letter-spacing: -0.3px;
-    margin-bottom: 7px;
-    margin-top: 10px;
+    color: #c02e21;
+    margin: 6px 9px 0px 9px;
 `;
 
-export const AuthLoginInputBody = styled.input`
-    padding-left: 10px;
-    width: 314px;
-    height: 48px;
-    flex-shrink: 0;
-    border-radius: 6px;
-    border: 1px solid #39768d;
-    background: #fbfbfb;
-    color: white;
+export const LoginSubmitButton = styled.button`
+    width: 100%;
+    margin-bottom: 9px;
+    padding: 18px 21px;
+    background: #c02e21;
+    outline: none;
+    border: none;
+    border-radius: 100px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fbfbfb;
 `;
 
-export const AuthLoginText = styled.p`
-    color: #aeafb9;
-    margin-bottom: 8px;
-`;
-
-export const AuthLoginTextLink = styled.p`
-    color: #ffffff;
-    // 밑줄
-    text-decoration: underline;
-    cursor: pointer;
-    margin-bottom: 13px;
-`;
-export const AuthLoginTextWrapper = styled.div`
-    margin-top: 24px;
+export const LoginAccountFuncWrap = styled.div`
     display: flex;
-    flex-direction: column;
-
+    flex-direction: row;
     align-items: center;
-`;
-export const TotalManitoWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 24px;
-`;
-export const TotalManitoLogo = styled.img`
-    width: 60%;
-
-    object-fit: contain;
-    margin-top: 24px;
-`;
-
-export const TotalManitoContainer = styled.div`
-    margin: 30px 0px;
-    width: 342px;
-    padding: 12px;
-    border-radius: 6px;
-    background: #fbfbfb;
-    color: var(--white, #fff);
-    text-align: right;
-    font-size: 24px;
-    /* font-family: Leferi Point Type; */
-    display: flex;
     justify-content: end;
+    width: calc(100%);
+    margin-bottom: 60px;
+`;
+
+export const LoginAccountFuncSignup = styled.a`
+    padding-right: 12px;
+    border-right: 1px solid #b9aeaf;
+    color: #b9aeaf;
+    text-decoration: none;
+`;
+
+export const LoginAccountFuncReset = styled.a`
+    padding-left: 12px;
+    color: #b9aeaf;
+    text-decoration: none;
+`;
+
+export const LoginTotalManitoCounterWrap = styled.div`
+    display: flex;
+    flex-direction: column;
     align-items: center;
 `;
 
-export const SignUpHeaderImgBox = styled.img`
-    width: 60%;
+export const LoginTotalManitoCounterTitle = styled.div`
+    color: #332828;
+    font-size: 21px;
+    font-weight: bold;
+`;
 
-    position: absolute;
-    top: 200px;
+export const LoginTotalManitoCounter = styled.div`
+    color: #73241d;
+    font-size: 36px;
+    font-weight: bold;
 `;
 
 export const SignupWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 30px;
 `;
 
-export const AuthLoginBtn = styled.button`
+export const SignupHeader = styled.div`
     display: flex;
-    width: 334px;
-    padding: 12px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 12px;
-    border: 1px solid #c02e21;
-    background: #fbfbfb;
-    margin-top: 20px;
-    color: #fff;
-    text-align: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 30px;
+`;
+
+export const SignupTitle = styled.div`
+    font-weight: bold;
+    font-size: 36px;
+`;
+
+export const SignupBody = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+`;
+
+export const SingupInputList = styled.div`
+    margin-bottom: 30px;
+`;
+
+export const SingupInputWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 12px;
+`;
+
+export const SignupInputTitle = styled.div`
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0px 9px 6px 9px;
+`;
+
+export const SignupInputText = styled.input`
+    background: #f3eeef;
+    outline: none;
+    border: none;
+    border-radius: 100px;
+    padding: 15px 24px;
+`;
+
+export const SignupInputHints = styled.div`
+    margin: 6px 9px 0px 9px;
+`;
+
+export const SignupInputHint = styled.div`
+    font-size: 12px;
+    color: #c02e21;
+`;
+
+export const SignupSubmitButton = styled.button`
+    padding: 18px 21px;
+    background: #c02e21;
+    outline: none;
+    border: none;
+    border-radius: 100px;
     font-size: 18px;
+    font-weight: bold;
+    color: #fbfbfb;
 `;
