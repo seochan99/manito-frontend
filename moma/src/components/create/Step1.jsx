@@ -2,6 +2,7 @@ import React from 'react'
 import { ReactComponent as Heart } from "../../assets/icons/heartIcon.svg";
 import * as S from "./style";
 
+
 export default function Step1({setStep, setType}) {
   return (
     <>

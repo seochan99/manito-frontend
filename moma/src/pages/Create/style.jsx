@@ -43,8 +43,8 @@ export const ProgressCircle = styled.div`
 
 
 export const ProgressCircleWrapper = styled.div`
-position: sticky;
-    
+    position: sticky;
+    top: 0;
 
     width: 290px;
 
