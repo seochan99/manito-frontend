@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 // import { ReactComponent as Logo2 } from "../../assets/icons/mainlogo.svg";
-import Logo from "../../assets/icons/mainlogo.svg";
-import { styled } from "styled-components"
-
-
+import Logo from "../../assets/images/LogoImg.png";
+import { styled } from "styled-components";
 
 const Container = styled.nav`
     height: 56px;
@@ -14,25 +12,22 @@ const Container = styled.nav`
     position: relative;
     justify-content: space-between;
     padding: 16px;
-
-`
+`;
 
 const NavImg = styled.img`
-`
-
+    width: 100px;
+    height: 68px;
+    object-fit: cover;
+`;
 
 export default function NavBar() {
-  
-  return (
-    <Container onClick={()=>{
-      window.location.href="/"
-    }}>
-      
-
-      <NavImg src={Logo} alt="logo" />
-
-    
-    </Container>
-    
-  )
+    return (
+        <Container
+            onClick={() => {
+                window.location.href = "/";
+            }}
+        >
+            <NavImg src={Logo} alt="logo" />
+        </Container>
+    );
 }

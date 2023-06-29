@@ -13,7 +13,8 @@ export const LoginHeader = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 12px;
 `;
 
 export const LoginHeaderMainWording = styled.div`
@@ -37,7 +38,7 @@ export const LoginBody = styled.div`
 export const LoginImgBox = styled.img`
     width: 270px;
     height: 270px;
-    background: rgba(255, 0, 0, 0.1);
+    object-fit: cover;
     margin-bottom: 60px;
 `;
 

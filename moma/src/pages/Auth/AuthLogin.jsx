@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "../../api/axios";
+import Momabox from "../../assets/images/Momabox.png";
 import Lottie from "react-lottie";
 import animationData from "../../assets/lottie/giftbox.json";
 import {
@@ -23,7 +24,7 @@ import {
     LoginTotalManitoCounter,
 } from "./style";
 
-export default function AuthLogin({setUserData}) {
+export default function AuthLogin({ setUserData }) {
     const [errMsg, setErrMsg] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -46,22 +47,21 @@ export default function AuthLogin({setUserData}) {
 
     useEffect(() => {
         fetchManitoCnt();
-      }, []);
+    }, []);
 
     const fetchManitoCnt = () => {
-        axios.get('/manito/count')
-          .then(response => {
-            const { total_count } = response.data;
-            setTotalManito(total_count);
-          })
-          .catch(error => {
-            // Handle error if the request fails
-            console.log(error);
-          });
-      };
+        axios
+            .get("/manito/count")
+            .then((response) => {
+                const { total_count } = response.data;
+                setTotalManito(total_count);
+            })
+            .catch((error) => {
+                // Handle error if the request fails
+                console.log(error);
+            });
+    };
 
-   
-    
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
@@ -81,7 +81,6 @@ export default function AuthLogin({setUserData}) {
         }
     }
 
-
     async function postUserSignIn() {
         if (nullCheck(email) && nullCheck(password)) {
             setVisiModal({ display: "flex" });
@@ -95,6 +94,9 @@ export default function AuthLogin({setUserData}) {
                     console.log("Response", response);
                     if (response.data.message == "로그인 성공") {
                         setUserData(response.data);
+                        alert(
+                            `${response.data.user.name} 마니또님 반갑습니다!`
+                        );
                         navigate("/");
                     }
                 })
@@ -125,7 +127,7 @@ export default function AuthLogin({setUserData}) {
                 </LoginHeaderMainWording>
             </LoginHeader>
             <LoginBody>
-                <LoginImgBox />
+                <LoginImgBox src={Momabox} />
                 <LoginInputList>
                     <LoginInputWrap>
                         <LoginInputTitle>메일</LoginInputTitle>

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "../../api/axios";
 import Lottie from "react-lottie";
 import animationData from "../../assets/lottie/giftbox.json";
+import ManitoButtonImg from "../../assets/images/createManito.png";
+
 import {
     Modal,
     MainBody,
@@ -77,13 +79,16 @@ export default function Main() {
                 <Lottie options={defaultOptions} height={240} width={240} />
             </Modal>
             <MainHeader>
-                <MainLogo>모마</MainLogo>
                 <MainHeaderText>
                     {userData} 마니또님, 환영합니다!
                 </MainHeaderText>
             </MainHeader>
             <MainBody>
                 <MainCreateManito onClick={createManito}>
+                    <img
+                        src={ManitoButtonImg}
+                        style={{ height: "188px", width: "336px" }}
+                    ></img>
                     <MainCreateManitoTitle>
                         마니또{" "}
                         <strong style={{ fontWeight: "bold" }}>매칭하기</strong>
