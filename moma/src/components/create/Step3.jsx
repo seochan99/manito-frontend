@@ -42,6 +42,8 @@ export default function Step3({setStep, type, peoples, mails,groupName,publicDat
     }
   };
 
+  const formattedDate = publicDate.toLocaleString();
+
 
   return (
     <>
@@ -87,10 +89,17 @@ export default function Step3({setStep, type, peoples, mails,groupName,publicDat
           ))}
           </S.ResultTableContainer2>
 
-          <S.InputTitle style={{marginTop:"20px", marginLeft:"5px"}}>공개일</S.InputTitle>
-        <S.InputBox2>
-          {publicDate}
-        </S.InputBox2>
+
+          {type === 'A' ? (
+          <>
+            <S.InputTitle style={{marginTop:"20px", marginLeft:"5px"}}>공개일</S.InputTitle>
+            <S.InputBox2>
+              {formattedDate}
+            </S.InputBox2>
+          </>
+          ) : ("")}
+
+
         <S.InputTitle style={{marginTop:"5px", marginLeft:"5px"}}>선물금액</S.InputTitle>
         <S.InputBox2>
           {giftAmount}

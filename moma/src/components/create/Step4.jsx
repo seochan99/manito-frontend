@@ -1,8 +1,11 @@
 import React from 'react'
 import * as S from './style';
+import { LoginTotalManitoCounter, LoginTotalManitoCounterTitle, LoginTotalManitoCounterWrap } from '../../pages/Auth/style';
 // done페이지
-export default function Step4({peoples}) {
+export default function Step4({peoples,userCnt,setStep}) {
   
+console.log(userCnt);
+
   return (
     <>
       <S.DonePageWrapper>
@@ -17,6 +20,16 @@ export default function Step4({peoples}) {
         <br/> 매칭되었습니다!
         </S.ProgressingPointContent>
         
+
+        <LoginTotalManitoCounterWrap style={{marginBottom:"20px"}}>
+                    <LoginTotalManitoCounterTitle>
+                        현재까지 탄생한 마니또
+                    </LoginTotalManitoCounterTitle>
+                    <LoginTotalManitoCounter>
+                      {userCnt} 명
+                    </LoginTotalManitoCounter>
+        </LoginTotalManitoCounterWrap>
+
         <S.GoHome onClick={()=>{
           window.location.href="/";
         }}>

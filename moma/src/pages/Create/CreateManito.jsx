@@ -46,7 +46,7 @@ export default function CreateManito() {
     fetchManitoCnt();
   }, []);
 
-  
+
   const renderStepComponent = () => {
     switch (step) {
       case 1:
@@ -79,12 +79,13 @@ export default function CreateManito() {
       case 3:
         return <Step3 setStep={setStep} type={type} peoples={peoples} mails={mails} groupName = {groupName} publicDate={publicDate} giftAmount={giftAmount} ownerTalk={ownerTalk}/>;
       case 4:
-        return <Step4 setStep={setStep}/>;
+        return <Step4 setStep={setStep} userCnt={userCnt} />;
       default:
         return null;
     }
   };
 
+  
   return (
 
     step != 4 ? (
@@ -109,7 +110,7 @@ export default function CreateManito() {
       {/* 스탭별 컴포넌트 */}
       {renderStepComponent()}
     </S.StepWrapper>
-    ) :<Step4 setStep={setStep} peoples={peoples} />
+    ) :<Step4 setStep={setStep} peoples={peoples} userCnt={userCnt}/>
 
   );
 }
