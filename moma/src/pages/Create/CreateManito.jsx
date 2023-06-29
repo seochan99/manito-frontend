@@ -8,6 +8,7 @@ import Step3 from '../../components/create/Step3';
 import Step4 from '../../components/create/Step4';
 
 export default function CreateManito() {
+  
   const [step, setStep] = useState(1);
   const [type, setType] = useState("");
 

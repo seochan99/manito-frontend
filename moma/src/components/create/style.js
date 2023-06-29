@@ -1,4 +1,6 @@
+
 import { styled } from "styled-components";
+import DatePicker from 'react-datepicker';
 
 
 export const ProgressingHeaderWrapper = styled.div`
@@ -96,6 +98,69 @@ font-size: 15px;
 font-family: Pretendard;
 font-weight: 500;
 letter-spacing: -0.75px;
+`
+
+
+export const InputWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    
+    
+    
+    
+`
+
+export const InputTitle = styled.p`
+color: var(--gray-5, #676060);
+font-size: 17px;
+font-weight: 700;
+margin-bottom: 7px;
+
 
 
 `
+export const InputBox = styled.input`
+width: 100%;
+height: 50px;
+padding-left: 10px;
+border : none;
+display: inline-flex;
+border-radius: 12px;
+background: var(--gray-2, #F3EEEF);
+
+align-items: flex-start;
+gap: 10px;
+margin-bottom: 14px;
+
+`
+
+export const TextAreaBox = styled.textarea`
+width: 100%;
+height: 100px;
+padding-left: 10px;
+border : none;
+display: inline-flex;
+border-radius: 12px;
+background: var(--gray-2, #F3EEEF);
+
+align-items: flex-start;
+gap: 10px;
+margin-bottom: 14px;
+
+`
+
+
+
+export const StyledDatePicker = styled(DatePicker)`
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+  border: none;
+  display: inline-flex;
+  border-radius: 12px;
+  background: var(--gray-2, #F3EEEF);
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+`;
