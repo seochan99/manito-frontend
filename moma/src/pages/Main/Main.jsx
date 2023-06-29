@@ -79,34 +79,6 @@ export default function Main() {
                                 </MainMyManitoItem>
                             );
                         })}
-                        {/* <MainMyManitoItem>
-                            <MainMyManitoItemTags>
-                                <MainMyManitoItemTag>#2</MainMyManitoItemTag>
-                                <MainMyManitoItemTag>
-                                    메일로 받아요.
-                                </MainMyManitoItemTag>
-                            </MainMyManitoItemTags>
-                            <MainMyManitoItemTitle>
-                                영업팀 마니또
-                            </MainMyManitoItemTitle>
-                            <MainMyManitoItemPeriod>
-                                2023.01.01 ~ 2023.01.02
-                            </MainMyManitoItemPeriod>
-                        </MainMyManitoItem>
-                        <MainMyManitoItem>
-                            <MainMyManitoItemTags>
-                                <MainMyManitoItemTag>#1</MainMyManitoItemTag>
-                                <MainMyManitoItemTag>
-                                    함께 확인해요.
-                                </MainMyManitoItemTag>
-                            </MainMyManitoItemTags>
-                            <MainMyManitoItemTitle>
-                                영업팀 마니또
-                            </MainMyManitoItemTitle>
-                            <MainMyManitoItemPeriod>
-                                2023.01.01 ~ 2023.01.02
-                            </MainMyManitoItemPeriod>
-                        </MainMyManitoItem> */}
                     </MainMyManitoList>
                 </MainMyManito>
             </MainBody>
