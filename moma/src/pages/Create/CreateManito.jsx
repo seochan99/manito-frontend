@@ -56,7 +56,7 @@ export default function CreateManito() {
         
         />;
       case 3:
-        return <Step3 setStep={setStep} type={type} peoples={peoples} mails={mails} groupName = {groupName}/>;
+        return <Step3 setStep={setStep} type={type} peoples={peoples} mails={mails} groupName = {groupName} publicDate={publicDate} giftAmount={giftAmount} ownerTalk={ownerTalk}/>;
       case 4:
         return <Step4 setStep={setStep}/>;
       default:

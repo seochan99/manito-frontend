@@ -44,11 +44,17 @@ export default function Step2({ setStep, type,setPeoples,setMails,
 
     setPeoples(names);
     setMails(emails);
-
+xz
 
 
     // Check if publicDate is later than the current date
     const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleString();
+    if (type ==='B'){
+
+      setPublicDate(formattedDate);
+    }
+
     const selectedDate = new Date(publicDate);
 
     if (type === 'A' && selectedDate <= currentDate) {

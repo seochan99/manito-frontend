@@ -1,14 +1,12 @@
 import React from 'react'
 import * as S from './style';
 
-export default function Step3({setStep, type, peoples, mails,groupName}) {
+export default function Step3({setStep, type, peoples, mails,groupName,publicDate,giftAmount,ownerTalk}) {
 
   const handleNextStep = () => {
-  
-    // Perform the one-to-one matching of emails and names and save them to a new location
-
     setStep(4);
   };
+
   return (
     <>
         <S.ProgressingHeaderWrapper>
@@ -33,6 +31,7 @@ export default function Step3({setStep, type, peoples, mails,groupName}) {
         <S.InputBox2>
           {groupName}
         </S.InputBox2>
+        
         <S.ResultTableContainer2>
           <S.ResultTableContainer style={{borderBottom:"1px solid var(--gray-3, #E5DEDF) "}}>
               <S.ResultTableTitle>
@@ -52,7 +51,19 @@ export default function Step3({setStep, type, peoples, mails,groupName}) {
           ))}
           </S.ResultTableContainer2>
 
-        
+          <S.InputTitle style={{marginTop:"20px", marginLeft:"5px"}}>공개일</S.InputTitle>
+        <S.InputBox2>
+          {publicDate}
+        </S.InputBox2>
+        <S.InputTitle style={{marginTop:"5px", marginLeft:"5px"}}>선물금액</S.InputTitle>
+        <S.InputBox2>
+          {giftAmount}
+        </S.InputBox2>
+
+        <S.InputTitle style={{marginTop:"5px", marginLeft:"5px"}}>주최자로서 한마디</S.InputTitle>
+        <S.InputBox2>
+          {ownerTalk}
+        </S.InputBox2>
 
 
 
@@ -62,7 +73,7 @@ export default function Step3({setStep, type, peoples, mails,groupName}) {
           <S.WhatTypeOfManito
             type={0}
             onClick={() => {
-              setStep(1);
+              setStep(2);
             }}
           >
             이전으로
@@ -71,7 +82,7 @@ export default function Step3({setStep, type, peoples, mails,groupName}) {
             type={1}
             onClick={handleNextStep}
           >
-            다음으로
+            제출하기
           </S.WhatTypeOfManito>
         </S.WhatTypeOfManitoWrapper>
         </S.ProgressingHeaderWrapper>
