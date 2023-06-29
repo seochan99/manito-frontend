@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ReactComponent as Heart } from "../../assets/icons/heartIcon.svg";
 import Step1 from '../../components/create/Step1';
 import ProgressStatus from '../../components/create/ProgressStatus';
@@ -6,6 +6,7 @@ import * as S from "./style";
 import Step2 from '../../components/create/Step2';
 import Step3 from '../../components/create/Step3';
 import Step4 from '../../components/create/Step4';
+import axios from '../../api/axios';
 
 export default function CreateManito() {
 
@@ -20,12 +21,32 @@ export default function CreateManito() {
   const [ownerTalk, setOwnerTalk] = useState();
   const [publicDate, setPublicDate] = useState(new Date());
 
+  const [userCnt, setUserCnt] = useState(0);
   const [giftAmount, setGiftAmount] = useState('');
 
   const handleStepChange = (newStep) => {
     setStep(newStep);
   };
 
+
+  const fetchManitoCnt = () => {
+    axios.get('/manito/count')
+      .then(response => {
+        const { total_count } = response.data;
+        console.log(total_count);
+        setUserCnt(total_count);
+      })
+      .catch(error => {
+        // Handle error if the request fails
+        console.log(error);
+      });
+  };
+  
+  useEffect(() => {
+    fetchManitoCnt();
+  }, []);
+
+  
   const renderStepComponent = () => {
     switch (step) {
       case 1:
@@ -65,8 +86,10 @@ export default function CreateManito() {
   };
 
   return (
+
     step != 4 ? (
       
+
     
     <S.StepWrapper>
       <S.ProgressTextWrapper>
