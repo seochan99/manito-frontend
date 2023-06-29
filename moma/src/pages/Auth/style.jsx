@@ -24,6 +24,7 @@ export const LoginHeaderMainWording = styled.div`
 export const LoginHeaderSubWording = styled.div`
     font-weight: bold;
     font-size: 15px;
+    line-height: 1.4;
 `;
 
 export const LoginBody = styled.div`

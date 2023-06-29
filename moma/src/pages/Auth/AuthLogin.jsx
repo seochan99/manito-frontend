@@ -23,7 +23,7 @@ import {
     LoginTotalManitoCounter,
 } from "./style";
 
-export default function AuthLogin() {
+export default function AuthLogin({setUserData}) {
     const [errMsg, setErrMsg] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -44,12 +44,27 @@ export default function AuthLogin() {
         setEmail(e.target.value);
     };
 
+    useEffect(() => {
+        fetchManitoCnt();
+      }, []);
+
+    const fetchManitoCnt = () => {
+        axios.get('/manito/count')
+          .then(response => {
+            const { total_count } = response.data;
+            setTotalManito(total_count);
+          })
+          .catch(error => {
+            // Handle error if the request fails
+            console.log(error);
+          });
+      };
+
+   
+    
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
-    // useEffect(() => {
-    //     setTotalManito(1000);
-    // }, []);
 
     function nullCheck(value) {
         if (
@@ -66,16 +81,6 @@ export default function AuthLogin() {
         }
     }
 
-    async function getManitoCount() {
-        try {
-            const response = await axios.get("manito/count/");
-            const resData = response.data;
-            setTotalManito(resData.total_count);
-        } catch (error) {
-            console.error("Error", error);
-        }
-    }
-    getManitoCount();
 
     async function postUserSignIn() {
         if (nullCheck(email) && nullCheck(password)) {
@@ -89,15 +94,18 @@ export default function AuthLogin() {
                 .then((response) => {
                     console.log("Response", response);
                     if (response.data.message == "로그인 성공") {
+                        setUserData(response.data);
                         navigate("/");
                     }
                 })
                 .catch((error) => {
                     setVisiModal({ display: "none" });
                     console.log("Error", error);
+                    alert("존재하지 않는 계정입니다.");
                     setErrMsg("존재하지 않는 계정입니다.");
                 });
         } else {
+            alert("로그인에 실패했습니다. 나중에 다시 시도해주세요.");
             console.log("Fail");
         }
     }
