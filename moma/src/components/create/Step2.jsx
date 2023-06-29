@@ -51,7 +51,7 @@ export default function Step2({ setStep, type,setPeoples,setMails,
     const currentDate = new Date();
     const selectedDate = new Date(publicDate);
 
-    if (selectedDate <= currentDate) {
+    if (type === 'A' && selectedDate <= currentDate) {
       alert("현재보다 이후 시간대여야 합니다!");
       return;
     }

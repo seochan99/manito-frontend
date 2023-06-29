@@ -1,7 +1,14 @@
 import React from 'react'
 import * as S from './style';
 
-export default function Step3({setStep, type, peoples, mails}) {
+export default function Step3({setStep, type, peoples, mails,groupName}) {
+
+  const handleNextStep = () => {
+  
+    // Perform the one-to-one matching of emails and names and save them to a new location
+
+    setStep(4);
+  };
   return (
     <>
         <S.ProgressingHeaderWrapper>
@@ -22,8 +29,10 @@ export default function Step3({setStep, type, peoples, mails}) {
         
 
 
-        <S.InputTitle style={{marginTop:"20px"}}>모임명</S.InputTitle>
-        <S.InputBox2></S.InputBox2>
+        <S.InputTitle style={{marginTop:"20px", marginLeft:"5px"}}>모임명</S.InputTitle>
+        <S.InputBox2>
+          {groupName}
+        </S.InputBox2>
         <S.ResultTableContainer2>
           <S.ResultTableContainer style={{borderBottom:"1px solid var(--gray-3, #E5DEDF) "}}>
               <S.ResultTableTitle>
@@ -49,7 +58,22 @@ export default function Step3({setStep, type, peoples, mails}) {
 
 
 
-
+          <S.WhatTypeOfManitoWrapper>
+          <S.WhatTypeOfManito
+            type={0}
+            onClick={() => {
+              setStep(1);
+            }}
+          >
+            이전으로
+          </S.WhatTypeOfManito>
+          <S.WhatTypeOfManito
+            type={1}
+            onClick={handleNextStep}
+          >
+            다음으로
+          </S.WhatTypeOfManito>
+        </S.WhatTypeOfManitoWrapper>
         </S.ProgressingHeaderWrapper>
     </>
   )

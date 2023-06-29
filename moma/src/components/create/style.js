@@ -136,11 +136,16 @@ margin-bottom: 14px;
 
 export const InputBox2 = styled.div`
 width: 100%;
-height: 50px;
+height: 30px;
 padding-left: 10px;
 border : none;
-display: inline-flex;
+display: flex;
+justify-content: start;
+align-items: center;
+align-content: center;
 border-radius: 12px;
+padding-top: 10px;
+color : #676060;
 background: var(--gray-2, #F3EEEF);
 
 align-items: flex-start;
