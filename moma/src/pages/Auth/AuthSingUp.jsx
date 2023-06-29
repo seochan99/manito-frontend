@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "../../api/axios";
 import {
     SignupHeader,
     SignupBody,
@@ -70,6 +71,52 @@ export default function AuthSingUp() {
             setEqPassword(false);
         }
     }
+
+    function nullCheck(value) {
+        if (
+            value == "" ||
+            value == null ||
+            value == undefined ||
+            (value != null &&
+                typeof value == "object" &&
+                !Object.keys(value).length)
+        ) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    const formData = {
+        email: email,
+        name: name,
+        password: password,
+    };
+    async function registerUser() {
+        if (
+            nullCheck(email) &&
+            nullCheck(name) &&
+            nullCheck(password) &&
+            lenPassword &&
+            effPassword &&
+            eqPassword
+        ) {
+            console.log("성공");
+            axios
+                .post("user/register", formData)
+                .then((response) => {
+                    console.log("Response", response);
+                })
+                .catch((error) => {
+                    console.log("Error", error);
+                });
+        } else {
+            console.log("실패");
+        }
+    }
+    // useEffect(() => {
+    //     registerUser();
+    // });
 
     return (
         <SignupWrapper>
@@ -147,7 +194,9 @@ export default function AuthSingUp() {
                         </SignupInputHints>
                     </SingupInputWrap>
                 </SingupInputList>
-                <SignupSubmitButton>회원가입</SignupSubmitButton>
+                <SignupSubmitButton onClick={registerUser}>
+                    회원가입
+                </SignupSubmitButton>
             </SignupBody>
         </SignupWrapper>
     );
