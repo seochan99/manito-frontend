@@ -1,5 +1,6 @@
 {
-  "dependencies": {
-    "vite": "^4.3.9"
-  }
+    "dependencies": {
+        "vite": "^4.3.9"
+    },
+    "proxy": "https://api.modumanito.site/"
 }

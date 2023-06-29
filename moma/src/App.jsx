@@ -6,8 +6,8 @@ import NavBar from "./components/layout/NavBar";
 import DetailManito from "./pages/Detail/DetailManito";
 import CreateManito from "./pages/Create/CreateManito";
 import AuthLogin from "./pages/Auth/AuthLogin";
-import AuthSingUp from "./pages/Auth/AuthSingUp";
-
+import AuthSignUp from "./pages/Auth/AuthSignUp";
+import CreateDoneManito from "./pages/Create/CreateDoneManito";
 import Main from "./pages/Main/Main";
 
 const BodyWrapper = styled.div`
@@ -29,14 +29,13 @@ const LayoutWrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-    max-width: 430px;
+    max-width: 390px;
     width: 100%;
-    min-height: 830px;
-    max-height: 945px;
+    min-height: 900px;
+    max-height: 900px;
     overflow: scroll;
     background: #fbfbfb;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  
 `;
 
 const MainHeaderWrapper = styled.div`
@@ -50,7 +49,7 @@ const Layout = () => {
         <>
             <LayoutWrapper>
                 <ContentWrapper>
-                  <NavBar/>
+                    <NavBar />
                     <Outlet />
                 </ContentWrapper>
             </LayoutWrapper>
@@ -82,8 +81,7 @@ function App() {
             <Routes>
                 <Route element={<AuthLayout />}>
                     <Route path="/login" element={<AuthLogin />} />
-                    <Route path="/signup" element={<AuthSingUp />} />
-                    <Route path="/reset" element={<AuthSingUp />} />
+                    <Route path="/signup" element={<AuthSignUp />} />
                 </Route>
 
                 {/* 로그인 후 메인 */}

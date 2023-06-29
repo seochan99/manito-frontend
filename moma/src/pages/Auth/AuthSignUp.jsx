@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../api/axios";
+import { useNavigate } from "react-router-dom";
+import Lottie from "react-lottie";
+import animationData from "../../assets/lottie/giftbox.json";
 import {
+    ErrMsgBox,
+    Modal,
     SignupHeader,
     SignupBody,
     SignupInputHints,
@@ -12,9 +17,11 @@ import {
     SingupInputList,
     SingupInputWrap,
     SignupSubmitButton,
+    SignupLinkSignin,
 } from "./style";
 
 export default function AuthSingUp() {
+    const [errMsg, setErrMsg] = useState("");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -22,6 +29,18 @@ export default function AuthSingUp() {
     const [lenPassword, setLenPassword] = useState(false);
     const [effPassword, setEffPassword] = useState(false);
     const [eqPassword, setEqPassword] = useState(false);
+    const [visiModal, setVisiModal] = useState({ display: "none" });
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+        },
+    };
+
+    const navigate = useNavigate();
 
     const handleNameChange = (e) => {
         setName(e.target.value);
@@ -87,12 +106,7 @@ export default function AuthSingUp() {
         }
     }
 
-    const formData = {
-        email: email,
-        name: name,
-        password: password,
-    };
-    async function registerUser() {
+    async function postUserRegister() {
         if (
             nullCheck(email) &&
             nullCheck(name) &&
@@ -101,29 +115,45 @@ export default function AuthSingUp() {
             effPassword &&
             eqPassword
         ) {
-            console.log("성공");
+            setVisiModal({ display: "flex" });
+            const formData = {
+                email: email,
+                name: name,
+                password: password,
+            };
             axios
-                .post("user/register", formData)
+                .post("user/register/", formData)
                 .then((response) => {
                     console.log("Response", response);
+                    if (response.data.message == "회원가입 성공") {
+                        navigate("/login");
+                    }
                 })
                 .catch((error) => {
                     console.log("Error", error);
+                    setVisiModal({ display: "none" });
+                    setErrMsg("* 이미 가입된 이메일입니다.");
                 });
         } else {
-            console.log("실패");
+            setVisiModal({ display: "none" });
+            console.log("Fail");
         }
     }
-    // useEffect(() => {
-    //     registerUser();
-    // });
 
     return (
         <SignupWrapper>
+            <Modal style={visiModal}>
+                <Lottie options={defaultOptions} height={240} width={240} />
+            </Modal>
             <SignupHeader>
                 <SignupTitle>회원가입</SignupTitle>
             </SignupHeader>
             <SignupBody>
+                {errMsg === "" ? (
+                    <ErrMsgBox style={{ display: "none" }}>{errMsg}</ErrMsgBox>
+                ) : (
+                    <ErrMsgBox>{errMsg}</ErrMsgBox>
+                )}
                 <SingupInputList>
                     <SingupInputWrap>
                         <SignupInputTitle>이름</SignupInputTitle>
@@ -151,7 +181,9 @@ export default function AuthSingUp() {
                             required
                         ></SignupInputText>
                         <SignupInputHints>
-                            {lenPassword ? (
+                            {password.length === 0 ? (
+                                ""
+                            ) : lenPassword ? (
                                 <SignupInputHint style={{ color: "#1E4154" }}>
                                     ︎✓ 8자 이상 입력
                                 </SignupInputHint>
@@ -160,7 +192,10 @@ export default function AuthSingUp() {
                                     x 8자 이상 입력
                                 </SignupInputHint>
                             )}
-                            {effPassword ? (
+
+                            {password.length === 0 ? (
+                                ""
+                            ) : effPassword ? (
                                 <SignupInputHint style={{ color: "#1E4154" }}>
                                     ︎✓ 숫자, 영문, 특수문자 포함하여, 2개 이상
                                     조합
@@ -182,7 +217,9 @@ export default function AuthSingUp() {
                             required
                         ></SignupInputText>
                         <SignupInputHints>
-                            {eqPassword ? (
+                            {confirmPassword.length === 0 ? (
+                                ""
+                            ) : eqPassword ? (
                                 <SignupInputHint style={{ color: "#1E4154" }}>
                                     동일한 비밀번호입니다 :)
                                 </SignupInputHint>
@@ -194,9 +231,10 @@ export default function AuthSingUp() {
                         </SignupInputHints>
                     </SingupInputWrap>
                 </SingupInputList>
-                <SignupSubmitButton onClick={registerUser}>
+                <SignupSubmitButton onClick={postUserRegister}>
                     회원가입
                 </SignupSubmitButton>
+                <SignupLinkSignin href="/login">로그인</SignupLinkSignin>
             </SignupBody>
         </SignupWrapper>
     );

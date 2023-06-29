@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
 
 export const LoginWrapper = styled.div`
-    width: 390px;
+    position: relative;
+    width: 330px;
     max-width: 390px;
     background: #fbfbfb;
     padding: 30px;
@@ -88,20 +89,12 @@ export const LoginAccountFuncWrap = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
     width: calc(100%);
     margin-bottom: 60px;
 `;
 
 export const LoginAccountFuncSignup = styled.a`
-    padding-right: 12px;
-    border-right: 1px solid #b9aeaf;
-    color: #b9aeaf;
-    text-decoration: none;
-`;
-
-export const LoginAccountFuncReset = styled.a`
-    padding-left: 12px;
     color: #b9aeaf;
     text-decoration: none;
 `;
@@ -125,6 +118,7 @@ export const LoginTotalManitoCounter = styled.div`
 `;
 
 export const SignupWrapper = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -192,4 +186,45 @@ export const SignupSubmitButton = styled.button`
     font-size: 18px;
     font-weight: bold;
     color: #fbfbfb;
+`;
+
+export const Modal = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    min-height: 900px;
+    max-height: 900px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+`;
+
+export const ErrMsgBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 18px);
+    margin: 15px 0;
+    padding: 12px 9px;
+    font-weight: bold;
+    color: #c02e21;
+    background: #c02e2130;
+    border: 1px solid #c02e21;
+    border-radius: 12px;
+`;
+
+export const SignupLinkSignin = styled.a`
+    margin: 9px 0px;
+    width: 100%;
+    text-align: center;
+    color: #b9aeaf;
+    text-decoration: none;
 `;
