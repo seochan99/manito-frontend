@@ -37,6 +37,7 @@ export default function Step2({ setStep, type,setPeoples,setMails,
     }else if(participantEmails.length === 1 ||
       participantNames.length === 1){ 
         alert('신청 인원수가 너무 적습니다.(최소 2두명)');
+        return;
     }
 
     const emails = participantEmails.split(',');
@@ -44,7 +45,6 @@ export default function Step2({ setStep, type,setPeoples,setMails,
 
     setPeoples(names);
     setMails(emails);
-xz
 
 
     // Check if publicDate is later than the current date

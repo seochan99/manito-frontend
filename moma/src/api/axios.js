@@ -6,6 +6,7 @@ const instance = axios.create({
   baseURL: VITE_APP_SERVER_PORT + '/api/',
   withCredentials: true,
   headers: {
+    // 'bear' : 
     'Content-Type': 'application/json',
   },
 });

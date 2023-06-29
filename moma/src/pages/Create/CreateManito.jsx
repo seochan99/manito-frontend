@@ -65,8 +65,10 @@ export default function CreateManito() {
   };
 
   return (
+    step != 4 ? (
+      
+    
     <S.StepWrapper>
-
       <S.ProgressTextWrapper>
           <S.ProgressText color={step === 1 ? "#C02E21" : "#B9AEAF"}>STEP1</S.ProgressText>
           <S.ProgressText color={step === 2 ? "#C02E21" : "#B9AEAF"}>STEP2</S.ProgressText>
@@ -84,5 +86,7 @@ export default function CreateManito() {
       {/* 스탭별 컴포넌트 */}
       {renderStepComponent()}
     </S.StepWrapper>
+    ) :<Step4 setStep={setStep} peoples={peoples} />
+
   );
 }

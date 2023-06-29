@@ -4,7 +4,12 @@ import * as S from './style';
 export default function Step3({setStep, type, peoples, mails,groupName,publicDate,giftAmount,ownerTalk}) {
 
   const handleNextStep = () => {
-    setStep(4);
+    const shouldSubmit = window.confirm('모두에게 마니또-마로 배정 메일이 전송될 예정입니다. 정말 제출하시겠습니까? ');
+    if (shouldSubmit) {
+      
+      setStep(4);
+      // POST보내기
+    }
   };
 
   return (

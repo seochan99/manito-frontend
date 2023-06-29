@@ -136,7 +136,7 @@ margin-bottom: 14px;
 
 export const InputBox2 = styled.div`
 width: 100%;
-height: 30px;
+padding-bottom:10px;
 padding-left: 10px;
 border : none;
 display: flex;
@@ -215,6 +215,67 @@ export const ResultTableContainer2 = styled.div`
 export const ResultTableTitle = styled.h2`
     display: flex;
     justify-content: center;
-    ;
     text-align: center;
 `
+
+/*------------------ 스탭4 ------------------ */
+export const DonePageWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`
+export const PeopleCount = styled.div`
+color: var(--color-2, #C02E21);
+text-align: center;
+font-size: 60px;
+font-family: Pretendard;
+font-weight: 700;
+line-height: 60px;
+letter-spacing: -3px;
+
+`
+
+export const ProgressingPointContent = styled.h1`
+color: var(--black, #332828);
+
+font-size: 36px;
+font-family: Pretendard;
+font-weight: 700;
+margin-bottom: 50px;
+
+`
+export const DonePageObjectWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height : 100px;
+    
+`
+export const GoHome = styled.div`
+display: flex;
+
+
+width: 330px;
+padding: 18px 21px;
+justify-content: center;
+gap: 10px;
+border-radius: 100px;
+background: var(--color-2, #C02E21);
+color: var(--white, #FFF);
+text-align: center;
+font-size: 18px;
+font-family: Pretendard;
+font-weight: 700;
+letter-spacing: -0.9px;
+cursor: pointer;
+&:hover {
+    background: #fff;
+    color: var(--color-2, #C02E21);
+    border : 2px solid var(--color-2, #C02E21);
+    text-decoration: none;
+}
+    
+    ` 
