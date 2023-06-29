@@ -80,7 +80,7 @@ margin-top: 18px;
 
 
 export const TypeBox  = styled.div`
-margin: 38px 0px;
+margin: 38px 0px 20px 0px;
 width: 40%;
 
 display: flex;
