@@ -16,7 +16,6 @@ import Main from "./pages/Main/Main";
 
 const BodyWrapper = styled.div`
     text-align: center;
-    padding: 10px;
 `;
 
 export const MainHeaderIcon = styled.img`
@@ -25,16 +24,20 @@ export const MainHeaderIcon = styled.img`
 `;
 const LayoutWrapper = styled.div`
     width: 100vw;
+    height: 100vh;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #f5f5f5;
 `;
 
 const ContentWrapper = styled.div`
     max-width: 430px;
     width: 100%;
-    min-height: 100vh;
+    min-height: 945px;
+    max-height: 945px;
+    overflow: scroll;
     background: #fbfbfb;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
@@ -50,10 +53,7 @@ const Layout = () => {
         <>
             <LayoutWrapper>
                 <ContentWrapper>
-                    <NavBar />
-                    <BodyWrapper>
-                        <Outlet />
-                    </BodyWrapper>
+                    <Outlet />
                 </ContentWrapper>
             </LayoutWrapper>
         </>
@@ -66,8 +66,6 @@ const AuthLayout = () => {
         <>
             <LayoutWrapper>
                 <ContentWrapper>
-                    <MainHeaderWrapper></MainHeaderWrapper>
-
                     <Outlet />
                 </ContentWrapper>
             </LayoutWrapper>
