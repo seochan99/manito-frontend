@@ -41,8 +41,6 @@ export default function Step3({setStep, type, peoples, mails}) {
                 <div>{mails[index]}</div>
               </S.ResultTableContainer>
           ))}
-
-          
           </S.ResultTableContainer2>
 
         

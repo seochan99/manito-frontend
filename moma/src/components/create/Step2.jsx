@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import * as S from './style';
 
-export default function Step2({ setStep, type,setPeoples,setMails}) {
-  const [groupName, setGroupName] = useState('');
-  const [participantEmails, setParticipantEmails] = useState('');
-  const [participantNames, setParticipantNames] = useState('');
-  const [ownerTalk, setOwnerTalk] = useState();
-  const [publicDate, setPublicDate] = useState(new Date());
+export default function Step2({ setStep, type,setPeoples,setMails,groupName,setGroupName,
+  participantEmails,
+  setParticipantEmails,
+  participantNames,
+  setParticipantNames,
+  ownerTalk,
+  setOwnerTalk,
+  publicDate,
+  setPublicDate,
+  giftAmount,
+  setGiftAmount
+}) {
 
-  const [giftAmount, setGiftAmount] = useState('');
   
 
   const handlePublicDateChange = (date) => {
