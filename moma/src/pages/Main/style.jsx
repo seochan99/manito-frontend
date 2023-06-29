@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import CreateManito from "../Create/CreateManito";
 
 export const MainWrapper = styled.div`
     width: 348px;
@@ -32,6 +33,7 @@ export const MainCreateManito = styled.button`
     width: 100%;
     height: 188px;
     background: linear-gradient(45deg, #9d1525, #d57644);
+    background-size: 348px 188px, 348px 188px;
     border-radius: 12px;
     border: none;
     outline: none;
