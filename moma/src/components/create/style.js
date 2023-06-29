@@ -1,7 +1,6 @@
-
 import { styled } from "styled-components";
+import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
-
 
 export const ProgressingHeaderWrapper = styled.div`
     display: flex;
@@ -18,6 +17,7 @@ export const ProgressingHeader = styled.h1`
     letter-spacing: -2.1px;
     line-height: 1.2;
 
+
 `
 export const ProgressingPointWord  = styled.h1`
     display: flex;
@@ -28,7 +28,6 @@ export const ProgressingPointWord  = styled.h1`
     letter-spacing: -2.4px;
     margin-bottom: 10px;
     `
-
 
 export const WhatTypeOfManitoWrapper = styled.div`
     display: flex;
@@ -59,6 +58,7 @@ export const WhatTypeOfManito = styled.div`
     
     
 `
+/*------------------ 스탭 2 ------------------ */
 
 export const WarningContent = styled.p`
 color: #000;
@@ -80,7 +80,7 @@ margin-top: 18px;
 
 
 export const TypeBox  = styled.div`
-margin: 38px 0px 20px 0px;
+margin: 38px 0px;
 width: 40%;
 
 display: flex;
@@ -137,18 +137,21 @@ margin-bottom: 14px;
 
 export const TextAreaBox = styled.textarea`
 width: 100%;
+padding-top:10px;
+appearance: none;
+  border: none;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+
 height: 100px;
 padding-left: 10px;
-appearance: none;
-border: none;
-resize: none;
-padding-top: 10px;
-outline: none;
-font-family: inherit;
+border : none;
 display: inline-flex;
 border-radius: 12px;
 background: var(--gray-2, #F3EEEF);
-appearance: none;
+
 align-items: flex-start;
 gap: 10px;
 margin-bottom: 14px;
@@ -169,3 +172,13 @@ export const StyledDatePicker = styled(DatePicker)`
   gap: 10px;
   margin-bottom: 14px;
 `;
+
+/*------------------ 스탭3 ------------------ */
+export const ResultTableContainer = styled.div`
+    display: flex;
+    display: flex;
+    width: 318px;
+    padding: 0px 12px 12px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+`

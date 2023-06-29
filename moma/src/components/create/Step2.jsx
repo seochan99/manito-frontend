@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-
-import 'react-datepicker/dist/react-datepicker.css';
 import * as S from './style';
 
 export default function Step2({ setStep, type,setPeoples,setMails}) {
@@ -35,8 +33,7 @@ export default function Step2({ setStep, type,setPeoples,setMails}) {
 
     setPeoples(names);
     setMails(emails);
-    console.log(emails);
-    console.log(names);
+
 
     if (emails.length !== names.length) {
       alert(`메일 수(${emails.length})와 사람 수(${names.length})가 일치하지 않습니다.`);

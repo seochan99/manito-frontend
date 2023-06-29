@@ -25,7 +25,7 @@ export default function CreateManito() {
       case 2:
         return <Step2 setStep={setStep} type={type} setPeoples={setPeoples} setMails={setMails}/>;
       case 3:
-        return <Step3 setStep={setStep}/>;
+        return <Step3 setStep={setStep} type={type} peoples={peoples} mails={mails}/>;
       case 4:
         return <Step4 setStep={setStep}/>;
       default:
