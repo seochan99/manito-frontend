@@ -139,11 +139,16 @@ export const TextAreaBox = styled.textarea`
 width: 100%;
 height: 100px;
 padding-left: 10px;
-border : none;
+appearance: none;
+border: none;
+resize: none;
+padding-top: 10px;
+outline: none;
+font-family: inherit;
 display: inline-flex;
 border-radius: 12px;
 background: var(--gray-2, #F3EEEF);
-
+appearance: none;
 align-items: flex-start;
 gap: 10px;
 margin-bottom: 14px;
