@@ -22,10 +22,10 @@ export default function Step3({setStep, type, peoples, mails}) {
         
 
 
-        
+        <S.InputTitle style={{marginTop:"20px"}}>모임명</S.InputTitle>
+        <S.InputBox2></S.InputBox2>
         <S.ResultTableContainer2>
           <S.ResultTableContainer style={{borderBottom:"1px solid var(--gray-3, #E5DEDF) "}}>
-            
               <S.ResultTableTitle>
                 이름
               </S.ResultTableTitle>

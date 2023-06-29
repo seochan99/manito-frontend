@@ -132,6 +132,20 @@ background: var(--gray-2, #F3EEEF);
 align-items: flex-start;
 gap: 10px;
 margin-bottom: 14px;
+`
+
+export const InputBox2 = styled.div`
+width: 100%;
+height: 50px;
+padding-left: 10px;
+border : none;
+display: inline-flex;
+border-radius: 12px;
+background: var(--gray-2, #F3EEEF);
+
+align-items: flex-start;
+gap: 10px;
+margin-bottom: 14px;
 
 `
 

@@ -122,8 +122,9 @@ export default function Step2({ setStep, type,setPeoples,setMails,
                   onChange={handlePublicDateChange}
                   showTimeSelect
                   timeFormat="HH:mm"
-                  timeIntervals={15}
+                  timeIntervals={30}
                   dateFormat="yyyy.MM.dd HH:mm"
+                  selected={publicDate}
                   placeholderText="예시) 2023.06.29 18:00"
                 />
               </>
