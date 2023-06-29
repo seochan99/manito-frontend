@@ -31,11 +31,12 @@ const LayoutWrapper = styled.div`
 const ContentWrapper = styled.div`
     max-width: 430px;
     width: 100%;
-    min-height: 945px;
+    min-height: 830px;
     max-height: 945px;
     overflow: scroll;
     background: #fbfbfb;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
 `;
 
 const MainHeaderWrapper = styled.div`

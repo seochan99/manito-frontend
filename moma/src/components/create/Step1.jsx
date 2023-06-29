@@ -6,9 +6,9 @@ export default function Step1({setStep, setType}) {
   return (
     <>
         
-        <Heart/>
-        
-        
+        <S.HeartWrapper>
+        <Heart className="heartbeat" />
+        </S.HeartWrapper>
         <S.ProgressingHeaderWrapper>
           
           <S.ProgressingPointWord>
@@ -33,7 +33,7 @@ export default function Step1({setStep, setType}) {
               setStep(2);
             }}
             >
-              함께 알아가 볼래요!
+              함께 알아가 볼게요!
             </S.WhatTypeOfManito>
           </S.WhatTypeOfManitoWrapper>
           
