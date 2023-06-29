@@ -9,6 +9,7 @@ import Step4 from '../../components/create/Step4';
 
 export default function CreateManito() {
   const [step, setStep] = useState(1);
+  const [type, setType] = useState("");
 
   const handleStepChange = (newStep) => {
     setStep(newStep);
@@ -17,13 +18,13 @@ export default function CreateManito() {
   const renderStepComponent = () => {
     switch (step) {
       case 1:
-        return <Step1 />;
+        return <Step1 setStep={setStep} setType={setType} />;
       case 2:
-        return <Step2 />;
+        return <Step2 setStep={setStep} type={type}/>;
       case 3:
-        return <Step3 />;
+        return <Step3 setStep={setStep}/>;
       case 4:
-        return <Step4 />;
+        return <Step4 setStep={setStep}/>;
       default:
         return null;
     }

@@ -2,11 +2,12 @@ import React from 'react'
 import { ReactComponent as Heart } from "../../assets/icons/heartIcon.svg";
 import * as S from "./style";
 
-export default function Step1() {
+export default function Step1({setStep, setType}) {
   return (
     <>
         
         <Heart/>
+        
         
         <S.ProgressingHeaderWrapper>
           
@@ -21,10 +22,17 @@ export default function Step1() {
 
           {/* 매칭  */}
           <S.WhatTypeOfManitoWrapper>
-            <S.WhatTypeOfManito type={0} style={{marginRight:"10px"}}>
+            <S.WhatTypeOfManito type={0} style={{marginRight:"10px"}} onClick={()=>{
+              setType("A");
+              setStep(2);
+            }}>
               메일로 받아 볼래요!
             </S.WhatTypeOfManito>
-            <S.WhatTypeOfManito type={1}>
+            <S.WhatTypeOfManito type={1} onClick={()=>{
+              setType("B");
+              setStep(2);
+            }}
+            >
               함께 알아가가볼래요!
             </S.WhatTypeOfManito>
           </S.WhatTypeOfManitoWrapper>

@@ -1,7 +1,6 @@
 import React from 'react'
-
+import { ReactComponent as Logo2 } from "../../assets/icons/mainlogo.svg";
 import { styled } from "styled-components"
-import LogoImg from "../../assets/images/Logo.png"
 
 
 
@@ -20,9 +19,13 @@ const Container = styled.nav`
 
 
 export default function NavBar() {
+  
   return (
-    <Container>
-        모마
+    <Container onClick={()=>{
+    }}>
+      {/* <Logo2/> */}
+      모마
+
     
     </Container>
     
