@@ -26,6 +26,10 @@ export default function Step2({ setStep, type,setPeoples,setMails}) {
     ) {
       alert('입력되지 않은 항목이 있습니다.');
       return;
+    }else if(
+      participantEmails.length === 1 ||
+      participantNames.length === 1 ){
+      alert("한명은 마니또 이벤트를 참여할 수 없습니다.");
     }
 
     const emails = participantEmails.split(',');

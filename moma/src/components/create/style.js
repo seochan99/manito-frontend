@@ -80,7 +80,7 @@ margin-top: 18px;
 
 
 export const TypeBox  = styled.div`
-margin: 38px 0px;
+margin: 38px 0px 20px 0px;
 width: 40%;
 
 display: flex;
@@ -173,12 +173,29 @@ export const StyledDatePicker = styled(DatePicker)`
   margin-bottom: 14px;
 `;
 
-/*------------------ 스탭3 ------------------ */
+
 export const ResultTableContainer = styled.div`
+    display: grid;
+    padding : 14px 20px;
+    grid-template-columns: 1fr 3.5fr;
+    
+    border-radius: 6px;
+    /* border: 1px solid var(--gray-3, #E5DEDF); */
+    
+`
+/*------------------ 스탭3 ------------------ */
+export const ResultTableContainer2 = styled.div`
+    margin-top: 30px;
+    padding : 10px 10px;
+    color : #332828;
+    border-radius: 6px;
+    border: 1px solid var(--gray-3, #E5DEDF);
+    background-color: #F3EEEF;
+    
+`
+export const ResultTableTitle = styled.h2`
     display: flex;
-    display: flex;
-    width: 318px;
-    padding: 0px 12px 12px 12px;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
+    ;
+    text-align: center;
 `
