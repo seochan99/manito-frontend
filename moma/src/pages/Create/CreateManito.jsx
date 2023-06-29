@@ -14,6 +14,14 @@ export default function CreateManito() {
   const [peoples, setPeoples] = useState("");
   const [mails, setMails] = useState("");
 
+  const [groupName, setGroupName] = useState('');
+  const [participantEmails, setParticipantEmails] = useState('');
+  const [participantNames, setParticipantNames] = useState('');
+  const [ownerTalk, setOwnerTalk] = useState();
+  const [publicDate, setPublicDate] = useState(new Date());
+
+  const [giftAmount, setGiftAmount] = useState('');
+
   const handleStepChange = (newStep) => {
     setStep(newStep);
   };
@@ -23,7 +31,30 @@ export default function CreateManito() {
       case 1:
         return <Step1 setStep={setStep} setType={setType} />;
       case 2:
-        return <Step2 setStep={setStep} type={type} setPeoples={setPeoples} setMails={setMails}/>;
+        return <Step2 
+          setStep={setStep}
+          type={type}
+          setPeoples={setPeoples}
+          setMails={setMails}
+          groupName = {groupName}
+          setGroupName={setGroupName}
+
+          participantEmails={participantEmails}
+          setParticipantEmails={setParticipantEmails}
+
+          participantNames={participantNames}
+          setParticipantNames={setParticipantNames}
+
+          ownerTalk={ownerTalk}
+          setOwnerTalk={setOwnerTalk}
+          publicDate={publicDate}
+          setPublicDate={setPublicDate}
+          giftAmount={giftAmount}
+          setGiftAmount={setGiftAmount}
+
+
+        
+        />;
       case 3:
         return <Step3 setStep={setStep} type={type} peoples={peoples} mails={mails}/>;
       case 4:

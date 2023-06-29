@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import * as S from './style';
 
-export default function Step2({ setStep, type,setPeoples,setMails,groupName,setGroupName,
+export default function Step2({ setStep, type,setPeoples,setMails,
+  groupName,
+  setGroupName,
   participantEmails,
   setParticipantEmails,
   participantNames,
@@ -23,6 +25,7 @@ export default function Step2({ setStep, type,setPeoples,setMails,groupName,setG
 
 
   const handleNextStep = () => {
+    console.log(participantEmails.length)
     if (
       groupName.length === 0 ||
       participantEmails.length === 0 ||
@@ -31,10 +34,9 @@ export default function Step2({ setStep, type,setPeoples,setMails,groupName,setG
     ) {
       alert('입력되지 않은 항목이 있습니다.');
       return;
-    }else if(
-      participantEmails.length === 1 ||
-      participantNames.length === 1 ){
-      alert("한명은 마니또 이벤트를 참여할 수 없습니다.");
+    }else if(participantEmails.length === 1 ||
+      participantNames.length === 1){ 
+        alert('신청 인원수가 너무 적습니다.(최소 2두명)');
     }
 
     const emails = participantEmails.split(',');
@@ -44,10 +46,22 @@ export default function Step2({ setStep, type,setPeoples,setMails,groupName,setG
     setMails(emails);
 
 
+
+    // Check if publicDate is later than the current date
+    const currentDate = new Date();
+    const selectedDate = new Date(publicDate);
+
+    if (selectedDate <= currentDate) {
+      alert("현재보다 이후 시간대여야 합니다!");
+      return;
+    }
+
+
     if (emails.length !== names.length) {
       alert(`메일 수(${emails.length})와 사람 수(${names.length})가 일치하지 않습니다.`);
       return;
     }
+    
 
     // Perform the one-to-one matching of emails and names and save them to a new location
 
@@ -98,16 +112,26 @@ export default function Step2({ setStep, type,setPeoples,setMails,groupName,setG
             onChange={(e) => setParticipantNames(e.target.value.trim())}
           />
 
-          <S.InputTitle>공개원하시는 날을 알려주세요.</S.InputTitle>
-          <S.StyledDatePicker
-            required
-            onChange={handlePublicDateChange}
-            showTimeSelect
-            timeFormat="HH:mm"
-            timeIntervals={15}
-            dateFormat="yyyy.MM.dd HH:mm"
-            placeholderText="예시) 2023.06.29 18:00"
-          />
+
+
+          {type === 'A' ? (
+              <>
+                <S.InputTitle>공개원하시는 날을 알려주세요.</S.InputTitle>
+                <S.StyledDatePicker
+                  required
+                  onChange={handlePublicDateChange}
+                  showTimeSelect
+                  timeFormat="HH:mm"
+                  timeIntervals={15}
+                  dateFormat="yyyy.MM.dd HH:mm"
+                  placeholderText="예시) 2023.06.29 18:00"
+                />
+              </>
+            ) : (
+              <></>
+            )}
+
+
 
           <S.InputTitle>마니또 선물 금액을 알려주세요.</S.InputTitle>
           <S.InputBox
