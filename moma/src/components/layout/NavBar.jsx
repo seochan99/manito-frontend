@@ -13,7 +13,6 @@ const Container = styled.nav`
     position: relative;
     justify-content: space-between;
     padding: 16px;
-    border-bottom: 1px solid #E5E5E5;
 
 `
 
