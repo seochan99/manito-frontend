@@ -1,1 +1,0 @@
-export {ReactComponent as MainBar} from './icons/mainBar.svg'
