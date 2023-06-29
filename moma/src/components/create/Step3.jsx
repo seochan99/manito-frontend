@@ -1,16 +1,49 @@
 import React from 'react'
 import * as S from './style';
+import axios from '../../api/axios';
 
 export default function Step3({setStep, type, peoples, mails,groupName,publicDate,giftAmount,ownerTalk}) {
 
-  const handleNextStep = () => {
-    const shouldSubmit = window.confirm('모두에게 마니또-마로 배정 메일이 전송될 예정입니다. 정말 제출하시겠습니까? ');
+  const handleNextStep = async () => {
+    const shouldSubmit = window.confirm('모두에게 마니또-마로 배정 메일이 전송될 예정입니다. 정말 제출하시겠습니까?');
     if (shouldSubmit) {
-      
-      setStep(4);
-      // POST보내기
+      try {
+        // Prepare the data object to be sent
+        const data = {
+          title: groupName,
+          content: ownerTalk,
+          type: type,
+          price: giftAmount,
+          mail_data: mails.join(', '),
+          name_data: peoples.join(', '),
+          end_at: type === 'A' ? publicDate : null,
+        };
+
+        console.log(data)
+
+        // Send the POST request to the API endpoint
+        const response = await axios.post('manito/', data);
+        console.log(response);
+
+        // Handle the response or perform any necessary actions
+        console.log(response.data);
+
+        // Set the step to 4 if needed
+        setStep(4);
+      } catch (error) {
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        }
+        alert("메일 발송에 실패했습니다. 추후 다시 시도해주세요.");
+        console.error(error);
+      }
     }
   };
+
+  const formattedDate = publicDate.toLocaleString();
+
 
   return (
     <>
@@ -56,10 +89,17 @@ export default function Step3({setStep, type, peoples, mails,groupName,publicDat
           ))}
           </S.ResultTableContainer2>
 
-          <S.InputTitle style={{marginTop:"20px", marginLeft:"5px"}}>공개일</S.InputTitle>
-        <S.InputBox2>
-          {publicDate}
-        </S.InputBox2>
+
+          {type === 'A' ? (
+          <>
+            <S.InputTitle style={{marginTop:"20px", marginLeft:"5px"}}>공개일</S.InputTitle>
+            <S.InputBox2>
+              {formattedDate}
+            </S.InputBox2>
+          </>
+          ) : ("")}
+
+
         <S.InputTitle style={{marginTop:"5px", marginLeft:"5px"}}>선물금액</S.InputTitle>
         <S.InputBox2>
           {giftAmount}

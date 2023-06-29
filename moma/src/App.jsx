@@ -5,13 +5,9 @@ import { Outlet, Route, Routes, useLocation } from "react-router-dom";
 import NavBar from "./components/layout/NavBar";
 import DetailManito from "./pages/Detail/DetailManito";
 import CreateManito from "./pages/Create/CreateManito";
-
-import MainHeaderImg from "../src/assets/images/MainHeaderImg.png";
-import Logo from "../src/assets/images/Logo.png";
 import AuthLogin from "./pages/Auth/AuthLogin";
 import AuthSingUp from "./pages/Auth/AuthSingUp";
-import CreateDoneManito from "./pages/Create/CreateDoneManito";
-import Footer from "./components/layout/Footer";
+
 import Main from "./pages/Main/Main";
 
 const BodyWrapper = styled.div`
@@ -35,11 +31,12 @@ const LayoutWrapper = styled.div`
 const ContentWrapper = styled.div`
     max-width: 430px;
     width: 100%;
-    min-height: 945px;
+    min-height: 830px;
     max-height: 945px;
     overflow: scroll;
     background: #fbfbfb;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
 `;
 
 const MainHeaderWrapper = styled.div`
@@ -53,6 +50,7 @@ const Layout = () => {
         <>
             <LayoutWrapper>
                 <ContentWrapper>
+                  <NavBar/>
                     <Outlet />
                 </ContentWrapper>
             </LayoutWrapper>
@@ -96,8 +94,6 @@ function App() {
                     <Route path="/detail/:id" element={<DetailManito />} />
                     {/* 마니또 생성 */}
                     <Route path="/create" element={<CreateManito />} />
-                    {/* 완료 마니또 전달 */}
-                    <Route path="/createDone" element={<CreateDoneManito />} />
                     {/* <Route path="*" element={<NotFound/>} /> */}
                 </Route>
             </Routes>

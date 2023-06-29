@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled,keyframes } from "styled-components";
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
 
@@ -32,8 +32,9 @@ export const ProgressingPointWord  = styled.h1`
 export const WhatTypeOfManitoWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    margin-top: 30px;
+    margin: 30px 0px;
     justify-content: space-betweens;
+    
     `
 export const WhatTypeOfManito = styled.div`
 
@@ -277,5 +278,22 @@ cursor: pointer;
     border : 2px solid var(--color-2, #C02E21);
     text-decoration: none;
 }
-    
-    ` 
+` 
+
+const heartbeat = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
+
+export const HeartWrapper = styled.div`
+  .heartbeat {
+    animation: ${heartbeat} 1.5s infinite;
+  }
+`;
