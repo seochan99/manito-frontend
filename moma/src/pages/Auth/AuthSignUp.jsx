@@ -126,6 +126,9 @@ export default function AuthSingUp() {
                 .then((response) => {
                     console.log("Response", response);
                     if (response.data.message == "회원가입 성공") {
+                        alert(
+                            "회원가입을 축하드립니다! 로그운 후, 서비스를 이용해 주십시오."
+                        );
                         navigate("/login");
                     }
                 })

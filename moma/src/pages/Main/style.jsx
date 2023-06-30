@@ -5,7 +5,7 @@ export const MainWrapper = styled.div`
     width: 348px;
     max-width: 390px;
     background: #fbfbfb;
-    padding: 30px 21px;
+    padding: 0px 21px 30px 21px;
 `;
 
 export const MainHeader = styled.div`
@@ -44,7 +44,7 @@ export const MainCreateManito = styled.button`
 export const MainCreateManitoTitle = styled.div`
     position: relative;
     left: -70px;
-    top: -50px;
+    top: -160px;
     color: #fbfbfb;
     font-size: 24px;
 `;
@@ -91,9 +91,11 @@ export const MainMyManitoItemTag = styled.div`
     font-size: 15px;
 `;
 
-export const MainMyManitoItemTitle = styled.div`
+export const MainMyManitoItemTitle = styled.a`
     font-size: 24px;
     font-weight: bold;
+    text-decoration: none;
+    color: #000;
 `;
 
 export const MainMyManitoItemPeriod = styled.div`

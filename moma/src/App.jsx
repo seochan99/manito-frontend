@@ -25,7 +25,13 @@ const LayoutWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f5f5f5;
+    background: url("../src/assets/images/layer2.png"),
+        url("../src/assets/images/layer1.png");
+    background-position: center;
+    background-repeat: no-repeat, repeat;
+    @media only screen and (max-width: 768px) {
+        background: #fbfbfb;
+    }
 `;
 
 const ContentWrapper = styled.div`
@@ -35,7 +41,11 @@ const ContentWrapper = styled.div`
     max-height: 900px;
     overflow: scroll;
     background: #fbfbfb;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 48px;
+    @media only screen and (max-width: 768px) {
+        border-radius: 0px;
+        padding-top: 60px;
+    }
 `;
 
 const MainHeaderWrapper = styled.div`
@@ -79,10 +89,13 @@ function App() {
             <Reset />
 
             {/* 로그인 및 회원 가입 */}
-            
+
             <Routes>
                 <Route element={<AuthLayout />}>
-                    <Route path="/login" element={<AuthLogin setUserData={setUserData}/>} />
+                    <Route
+                        path="/login"
+                        element={<AuthLogin setUserData={setUserData} />}
+                    />
                     <Route path="/signup" element={<AuthSignUp />} />
                 </Route>
 
