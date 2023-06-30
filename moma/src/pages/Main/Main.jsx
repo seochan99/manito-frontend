@@ -59,13 +59,13 @@ export default function Main() {
         setManitoData([
             {
                 type: "함께 확인해요.",
-                title: "영업팀 마니또",
+                title: "공동해커톤화이팅",
                 sdate: "2023.06.28",
                 edate: "2023.06.29",
             },
             {
                 type: "메일로 받아봐요.",
-                title: "영업팀 마니또",
+                title: "모두수고했어요",
                 sdate: "2023.06.27",
                 edate: "2023.06.29",
             },
