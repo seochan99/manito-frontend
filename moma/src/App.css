@@ -1,6 +1,13 @@
 #root {
-  font-family: 'Pretendard-Regular';
-  /* display: flex; */
-  /* margin: 0 auto;
-  justify-content: center; */
+    font-family: 'Pretendard-Regular';
+    background: #fbfbfb;
+}
+
+* {
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
