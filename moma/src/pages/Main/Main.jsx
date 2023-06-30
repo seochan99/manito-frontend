@@ -57,20 +57,20 @@ export default function Main() {
 
     useEffect(() => {
         setUserData("서희찬");
-        // setManitoData([
-        //     {
-        //         type: "함께 확인해요.",
-        //         title: "영업팀 마니또",
-        //         sdate: "2023.01.01",
-        //         edate: "2023.01.02",
-        //     },
-        //     {
-        //         type: "메일로 받아봐요.",
-        //         title: "영업팀 마니또",
-        //         sdate: "2023.01.01",
-        //         edate: "2023.01.02",
-        //     },
-        // ]);
+        setManitoData([
+            {
+                type: "함께 확인해요.",
+                title: "영업팀 마니또",
+                sdate: "2023.06.28",
+                edate: "2023.06.29",
+            },
+            {
+                type: "메일로 받아봐요.",
+                title: "영업팀 마니또",
+                sdate: "2023.06.27",
+                edate: "2023.06.29",
+            },
+        ]);
     }, []);
 
     return (
