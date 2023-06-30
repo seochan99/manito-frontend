@@ -29,6 +29,9 @@ const LayoutWrapper = styled.div`
         url("../src/assets/images/layer1.png");
     background-position: center;
     background-repeat: no-repeat, repeat;
+    @media only screen and (max-width: 768px) {
+        background: #fbfbfb;
+    }
 `;
 
 const ContentWrapper = styled.div`
@@ -39,6 +42,10 @@ const ContentWrapper = styled.div`
     overflow: scroll;
     background: #fbfbfb;
     border-radius: 48px;
+    @media only screen and (max-width: 768px) {
+        border-radius: 0px;
+        padding-top: 60px;
+    }
 `;
 
 const MainHeaderWrapper = styled.div`
