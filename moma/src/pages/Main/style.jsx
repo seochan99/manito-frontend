@@ -91,9 +91,11 @@ export const MainMyManitoItemTag = styled.div`
     font-size: 15px;
 `;
 
-export const MainMyManitoItemTitle = styled.div`
+export const MainMyManitoItemTitle = styled.a`
     font-size: 24px;
     font-weight: bold;
+    text-decoration: none;
+    color: #000;
 `;
 
 export const MainMyManitoItemPeriod = styled.div`

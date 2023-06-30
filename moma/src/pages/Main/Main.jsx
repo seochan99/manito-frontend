@@ -44,16 +44,15 @@ export default function Main() {
         navigate("/create");
     }
 
-    async function getManitoData(id) {
-        try {
-            const response = await axios.get(`manito/${id}/partner/`);
-            const resData = response.data;
-            console.log(resData);
-        } catch (error) {
-            console.error("Error", error);
-        }
-    }
-    getManitoData(2);
+    // async function getManitoData(id) {
+    //     try {
+    //         const response = await axios.get(`manito/${id}/partner/`);
+    //         const resData = response.data;
+    //         console.log(resData);
+    //     } catch (error) {
+    //         console.error("Error", error);
+    //     }
+    // }
 
     useEffect(() => {
         setUserData("서희찬");
@@ -109,7 +108,7 @@ export default function Main() {
                                             {item.type}
                                         </MainMyManitoItemTag>
                                     </MainMyManitoItemTags>
-                                    <MainMyManitoItemTitle>
+                                    <MainMyManitoItemTitle href="/detail/1">
                                         {item.title}
                                     </MainMyManitoItemTitle>
                                     <MainMyManitoItemPeriod>
